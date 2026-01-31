@@ -16,8 +16,6 @@ import type {
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
-// 移除i18n导入以避免循环依赖
-
 // 定义站点语言
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
@@ -26,6 +24,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "只在此山中，云深不知处",
 	siteURL: "https://piteawa.github.io/", // 请替换为你的站点URL，以斜杠结尾
 	siteStartDate: "2026-01-10", // 站点开始运行日期，用于站点统计组件计算运行天数
+
 	timeZone: SITE_TIMEZONE,
 
 	lang: SITE_LANG,
@@ -52,7 +51,7 @@ export const siteConfig: SiteConfig = {
 		// 顶栏标题文本
 		text: "寻隐轩",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
-		icon: "logo.svg",
+		icon: "public/assets/home/logo.svg",
 	},
 
 	bangumi: {
@@ -95,20 +94,20 @@ export const siteConfig: SiteConfig = {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
 		src: {
 			desktop: [
-				"/assets/desktop-banner/1.webp",
-				"/assets/desktop-banner/2.webp",
-				"/assets/desktop-banner/3.webp",
-				"/assets/desktop-banner/4.webp",
-				"/assets/desktop-banner/5.webp",
-				"/assets/desktop-banner/6.webp",
+				"/assets/desktop-banner/12.webp",
+				"/assets/desktop-banner/7.webp",
+				"/assets/desktop-banner/8.webp",
+				"/assets/desktop-banner/9.webp",
+				"/assets/desktop-banner/10.webp",
+				"/assets/desktop-banner/11.webp",
 			], // 桌面横幅图片
 			mobile: [
-				"/assets/mobile-banner/1.webp",
-				"/assets/mobile-banner/2.webp",
-				"/assets/mobile-banner/3.webp",
-				"/assets/mobile-banner/4.webp",
-				"/assets/mobile-banner/5.webp",
-				"/assets/mobile-banner/6.webp",
+				"/assets/mobile-banner/12.webp",
+				"/assets/mobile-banner/7.webp",
+				"/assets/mobile-banner/8.webp",
+				"/assets/mobile-banner/9.webp",
+				"/assets/mobile-banner/10.webp",
+				"/assets/mobile-banner/11.webp",
 			], // 移动横幅图片
 		}, // 使用本地横幅图片
 
@@ -204,20 +203,20 @@ export const siteConfig: SiteConfig = {
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	src: {
 		desktop: [
-			"/assets/desktop-banner/1.webp",
-			"/assets/desktop-banner/2.webp",
-			"/assets/desktop-banner/3.webp",
-			"/assets/desktop-banner/4.webp",
-			"/assets/desktop-banner/5.webp",
-			"/assets/desktop-banner/6.webp",
+			"/assets/desktop-banner/12.webp",
+			"/assets/desktop-banner/7.webp",
+			"/assets/desktop-banner/8.webp",
+			"/assets/desktop-banner/9.webp",
+			"/assets/desktop-banner/10.webp",
+			"/assets/desktop-banner/11.webp",
 		], // 桌面横幅图片
 		mobile: [
-			"/assets/mobile-banner/1.webp",
-			"/assets/mobile-banner/2.webp",
-			"/assets/mobile-banner/3.webp",
-			"/assets/mobile-banner/4.webp",
-			"/assets/mobile-banner/5.webp",
-			"/assets/mobile-banner/6.webp",
+			"/assets/mobile-banner/12.webp",
+			"/assets/mobile-banner/7.webp",
+			"/assets/mobile-banner/8.webp",
+			"/assets/mobile-banner/9.webp",
+			"/assets/mobile-banner/10.webp",
+			"/assets/mobile-banner/11.webp",
 		], // 移动横幅图片
 	}, // 使用本地横幅图片
 	position: "center", // 壁纸位置，等同于 object-position
@@ -333,7 +332,7 @@ export const announcementConfig: AnnouncementConfig = {
 };
 
 export const musicPlayerConfig: MusicPlayerConfig = {
-	enable: false, // 启用音乐播放器功能
+	enable: true, // 启用音乐播放器功能
 	mode: "meting", // 音乐播放器模式，可选 "local" 或 "meting"
 	meting_api:
 		"https://www.bilibili.uno/api?server=:server&type=:type&id=:id&auth=:auth&r=:r", // Meting API 地址
@@ -467,7 +466,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 };
 
 export const sakuraConfig: SakuraConfig = {
-	enable: false, // 默认关闭樱花特效
+	enable: true, // 默认关闭樱花特效
 	sakuraNum: 21, // 樱花数量
 	limitTimes: -1, // 樱花越界限制次数，-1为无限循环
 	size: {
@@ -530,7 +529,7 @@ export const widgetConfigs = {
 } as const;
 
 export const umamiConfig = {
-	enabled: false, // 是否显示Umami统计
+	enabled: true, // 是否显示Umami统计
 	apiKey: import.meta.env.UMAMI_API_KEY || "api_xxxxxxxx", // API密钥优先从环境变量读取，否则使用配置文件中的值
 	baseUrl: "https://api.umami.is", // Umami Cloud API地址
 	scripts: `
